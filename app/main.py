@@ -45,35 +45,35 @@ class Distance:
             return Distance(round(self.km / other, 2))
         return NotImplemented
 
-    def __eq__(self, other: object) -> bool:
+    def __eq__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km == other.km
         if isinstance(other, (int, float)):
             return self.km == other
         return NotImplemented
 
-    def __lt__(self, other: object) -> bool:
+    def __lt__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km < other.km
         if isinstance(other, (int, float)):
             return self.km < other
         return NotImplemented
 
-    def __le__(self, other: object) -> bool:
+    def __le__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km <= other.km
         if isinstance(other, (int, float)):
             return self.km <= other
         return NotImplemented
 
-    def __gt__(self, other: object) -> bool:
+    def __gt__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km > other.km
         if isinstance(other, (int, float)):
             return self.km > other
         return NotImplemented
 
-    def __ge__(self, other: object) -> bool:
+    def __ge__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, Distance):
             return self.km >= other.km
         if isinstance(other, (int, float)):
